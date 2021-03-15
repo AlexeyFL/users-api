@@ -11,6 +11,7 @@ module.exports = {
     "array-callback-return": "off",
     "no-unused-vars": "off",
     "no-plusplus": "off",
+    "no-param-reassign": "off",
     "class-methods-use-this": "off",
     "import/no-extraneous-dependencies": "off"
   },

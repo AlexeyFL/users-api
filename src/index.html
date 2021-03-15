@@ -7,6 +7,24 @@
     <link rel="icon" href="favicon.ico" type="image/icon" />
   </head>
   <body>
-    <div id="app"></div>
+    <div class="app">
+      <h1 class="app__heading">Users API</h1>
+      <div class="app__header">
+        <div class="app__header-item table__header-item_sort">
+          Login
+          <div class="sort">
+            <button class="sort__btn asc">▲</button>
+            <button class="sort__btn desc">▼</button>
+          </div>
+        </div>
+        <div class="app__header-item app__header-item_search">
+          <div class="search">
+            <input class="search__input" type="text" placeholder="Search by login..."/>
+          </div>
+        </div>
+        <div class="app__header-item app__header-item_ava">Avatar</div>
+      </div>
+      <div class="app__body"></div>
+    </div>
   </body>
 </html>
