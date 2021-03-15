@@ -1,6 +1,6 @@
-# DemoApp
+# Github users api
 
-DemoApp is a sample web App based on Webpack v4 builder. It is a pure Vanilla JS project, without any back-end.
+Simple api with fetch
 
 ## Install
 
