@@ -2,14 +2,13 @@ import './styles/styles.scss';
 import Table from './components/table/table.component';
 import Popup from './components/popup/popup.component';
 
-const popup = new Popup('.app');
+const popup = new Popup('body');
 
 const table = new Table('.app__body', '.table__header');
 table.init();
 
 function search() {
   const searchInput = document.querySelector('.search__input');
-  const tableBody = document.querySelector('.table__body');
 
   searchInput.addEventListener('input', (e) => {
     document.querySelectorAll('.item').forEach((elem, index) => {

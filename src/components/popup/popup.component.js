@@ -31,11 +31,15 @@ export default class Popup {
     // popup more
     const popupMore = document.createElement('div');
     const popupMoreContent = document.createElement('div');
+
+    // more btn
     const moreButton = document.createElement('button');
     popupMore.className = 'popup__more';
     popupMoreContent.className = 'popup__more-content';
     moreButton.className = 'popup__btn';
     moreButton.textContent = 'More';
+    moreButton.addEventListener('click', this.moreBtnClick);
+
     popupMore.append(moreButton);
     popupMore.append(popupMoreContent);
 
@@ -47,19 +51,40 @@ export default class Popup {
     this.wrapper.appendChild(popup);
   }
 
+  moreBtnClick(e) {
+    const popup = document.querySelector('.popup');
+    const popupMore = popup.querySelector('.more');
+    const { target } = e;
+    popupMore.classList.toggle('active');
+    target.classList.toggle('active');
+    if (popup.classList.contains('active')) {
+      target.textContent = 'More';
+    }
+    if (popupMore.classList.contains('active')) {
+      target.textContent = 'Hide';
+    } else {
+      target.textContent = 'More';
+    }
+  }
+
   addByClick() {
     const popup = document.querySelector('.popup');
     const overlay = document.querySelector('.overlay');
+    const moreBtn = document.querySelector('.popup__btn');
 
     document.addEventListener('click', (e) => {
       const { target } = e;
       if (target.closest('[data-popup]')) {
         popup.classList.add('active');
         overlay.classList.add('active');
+        document.body.classList.add('active');
       }
       if (target.classList.contains('close')) {
         popup.classList.remove('active');
         overlay.classList.remove('active');
+        document.body.classList.remove('active');
+        moreBtn.classList.remove('active');
+        moreBtn.textContent = 'More';
       }
     });
   }
@@ -96,10 +121,14 @@ export default class Popup {
     const moreInfo = `
       <div class="more">
         <ul class="more__list">
-          <li>Github: <a target="_blank" href="${this.user.html_url}">${this.user.login}</a> </li>
+          <li>Github: <a target="_blank" href="${this.user.html_url}">${
+      this.user.login
+    }</a> </li>
           <li>Followers: ${this.user.followers}</li>
           <li>Following: ${this.user.following}</li>
-          <li>Blog: <a target="_blank" href="${this.user.blog || ''}">${this.user.blog || 'none'}</a></li>
+          <li>Blog: <a target="_blank" href="${this.user.blog || ''}">${
+      this.user.blog || 'none'
+    }</a></li>
         </ul>
       </div>
     `;
