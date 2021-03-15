@@ -6,8 +6,8 @@ export default class TableItem {
 
   createItem() {
     const item = `
-      <div class="item">
-        <span class="item__part item__login">Login: ${this.login}</span>
+      <div data-popup="true" class="item">
+        <span class="item__part item__login">${this.login}</span>
         <span class="item__part item__img">
           <img src="${this.avatarSrc}" alt="${this.login}"/>
         </span>

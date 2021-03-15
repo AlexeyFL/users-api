@@ -1,10 +1,12 @@
 function table(page, pagination) {
   const tableTemplate = `
     <div class="table">
-      ${page}
-    </div>
-    <div class="table__nav">
-      ${pagination || ""}
+      <div class="table__body">
+        ${page}
+      </div>
+      <div class="table__nav">
+        ${pagination || ""}
+      </div>
     </div>
   `;
   return tableTemplate;
