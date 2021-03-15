@@ -137,8 +137,6 @@ export default class Popup {
     popupMoreContent.innerHTML = moreInfo;
 
     popupTitle.textContent = this.user.login;
-    console.log(popupBody);
-    console.log(this.user);
   }
 
   init() {
